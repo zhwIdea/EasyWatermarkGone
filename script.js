@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         validatePassword();
     });
 
+    // 密码输入框回车验证
     passwordInput.addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
             validatePassword();
