@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyWatermarkGone - 视频去水印下载工具</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>">
+    <meta name="description" content="一款简单易用的视频去水印下载工具，支持多平台视频无水印下载。">
+</head>
+<body>
+    <div class="container" id="password-container">
+        <div class="card">
+            <h1 class="title">EasyWatermarkGone</h1>
+            <p class="subtitle">视频去水印下载工具</p>
+            <div class="input-group">
+                <input type="password" id="password-input" placeholder="请输入访问密码" class="input">
+                <button id="password-submit" class="btn primary">验证</button>
+            </div>
+            <p id="password-error" class="error-message"></p>
+        </div>
+    </div>
+
+    <div class="container hidden" id="main-container">
+        <div class="card">
+            <h1 class="title">EasyWatermarkGone</h1>
+            <p class="subtitle">视频去水印下载工具</p>
+            <div class="input-group">
+                <input type="text" id="video-url" placeholder="请输入视频链接" class="input">
+                <button id="parse-btn" class="btn primary">解析</button>
+            </div>
+            <p id="error-message" class="error-message"></p>
+
+            <div id="result-container" class="hidden">
+                <div class="video-info">
+                    <h2 id="video-title"></h2>
+                    <div class="cover-container">
+                        <img id="video-cover" src="" alt="视频封面">
+                    </div>
+                    <div class="btn-group">
+                        <a id="download-video" href="#" class="btn primary" download>
+                            <i class="fas fa-download"></i> 下载视频
+                        </a>
+                        <a id="download-cover" href="#" class="btn secondary" download>
+                            <i class="fas fa-image"></i> 下载封面
+                        </a>
+                        <!-- 进度条已移至弹窗中 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 EasyWatermarkGone - 视频去水印下载工具 | <span>v1.0.0</span></p>
+        <p class="small-text">支持抖音、快手、微博等多平台视频无水印下载</p>
+    </footer>
+
+    <!-- 下载进度弹窗 -->
+    <div class="modal hidden" id="download-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>文件下载中</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="progress-container" id="progress-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                    <div class="progress-text" id="progress-text">0%</div>
+                </div>
+                <p id="download-status">正在准备下载...</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
